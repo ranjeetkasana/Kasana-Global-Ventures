@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kasana Global Ventures | Building Tomorrow's Opportunities Today</title>
+  <meta name="description" content="Kasana Global Ventures provides cutting-edge technology, AI solutions, and automation services to help businesses scale, optimize, and innovate." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary: #111827;        /* dark slate */
+      --primary-light: #1f2937;
+      --accent: #fbbf24;         /* warm gold */
+      --accent-soft: rgba(251, 191, 36, 0.1);
+      --bg: #020617;             /* near black */
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --card-bg: #020617;
+      --border-subtle: rgba(148, 163, 184, 0.35);
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.85);
+      --radius-lg: 20px;
+      --radius-pill: 999px;
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #0f172a 0, #020617 52%, #000 100%);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .site-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Header / Nav */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(20px);
+      background: linear-gradient(to bottom, rgba(2, 6, 23, 0.96), rgba(2, 6, 23, 0.75), transparent);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 0;
+      gap: 1.5rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+
+    .logo-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 16px;
+      background: radial-gradient(circle at 20% 0, #facc15 0, #f97316 40%, #111827 80%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 12px 30px rgba(250, 204, 21, 0.4);
+      border: 1px solid rgba(15, 23, 42, 0.8);
+    }
+
+    .logo-mark span {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #020617;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .logo-text-main {
+      font-size: 1.1rem;
+      letter-spacing: 0.06em;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .logo-text-sub {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding: 0.2rem 0;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(to right, #fbbf24, #f97316);
+      transition: width 0.25s ease-out;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.68rem 1.5rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.88rem;
+      font-weight: 500;
+      border: 1px solid rgba(251, 191, 36, 0.35);
+      background: radial-gradient(circle at top left, rgba(250, 204, 21, 0.16), rgba(15, 23, 42, 0.98));
+      color: #fefce8;
+      cursor: pointer;
+      transition: all 0.2s ease-out;
+      box-shadow: 0 15px 35px rgba(15, 23, 42, 0.9);
+      white-space: nowrap;
+    }
+
+    .btn span.pulse-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      margin-right: 0.5rem;
+      background: #facc15;
+      box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.7);
+      animation: pulse 1.5s infinite;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px) translateZ(0);
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.85);
+      border-color: rgba(251, 191, 36, 0.7);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border-color: rgba(148, 163, 184, 0.7);
+      color: var(--muted);
+      box-shadow: none;
+    }
+
+    .btn-outline:hover {
+      background: rgba(15, 23, 42, 0.85);
+      color: var(--text);
+      border-color: rgba(148, 163, 184, 1);
+    }
+
+    .nav-toggle {
+      display: none;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: #e5e7eb;
+      border-radius: 999px;
+      margin: 4px 0;
+      transition: all 0.2s ease-out;
+    }
+
+    /* Hero */
+
+    main {
+      flex: 1;
+    }
+
+    .hero {
+      padding: 3rem 0 2.8rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.16rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 0.85rem;
+    }
+
+    .eyebrow-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 0, #facc15 0, #f97316 50%, transparent 100%);
+      box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.5);
+      animation: pulse 1.8s infinite;
+    }
+
+    .hero-title {
+      font-size: clamp(2.1rem, 3vw + 1rem, 3rem);
+      line-height: 1.15;
+      margin-bottom: 0.7rem;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-title span.highlight {
+      background: linear-gradient(to right, #fbbf24, #f97316);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 0.98rem;
+      color: var(--muted);
+      max-width: 34rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.3rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .hero-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .hero-meta-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(148, 163, 184, 0.9);
+    }
+
+    .hero-card {
+      position: relative;
+      border-radius: var(--radius-lg);
+      padding: 1.4rem;
+      background: radial-gradient(circle at 0 0, rgba(251, 191, 36, 0.08), rgba(15, 23, 42, 0.96));
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+
+    .hero-card-glow {
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 10% 0, rgba(251, 191, 36, 0.16), transparent 55%),
+        radial-gradient(circle at 80% 100%, rgba(59, 130, 246, 0.2), transparent 50%);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .hero-card-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.9rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.18rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(251, 191, 36, 0.55);
+      background: rgba(15, 23, 42, 0.9);
+      font-size: 0.72rem;
+      color: #fefce8;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #facc15;
+    }
+
+    .hero-card-title {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .metric {
+      border-radius: 16px;
+      padding: 0.7rem;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(15, 23, 42, 0.9);
+    }
+
+    .metric-label {
+      font-size: 0.70rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .metric-value {
+      font-size: 1.0rem;
+      font-weight: 600;
+    }
+
+    .metric-value span.accent {
+      color: #facc15;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-left: 0.15rem;
+    }
+
+    .hero-card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.76rem;
+      color: var(--muted);
+    }
+
+    .timeline-indicator {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .timeline-indicator span.line {
+      width: 52px;
+      height: 1px;
+      border-radius: 999px;
+      background: linear-gradient(to right, rgba(148, 163, 184, 0.1), rgba(251, 191, 36, 0.75));
+    }
+
+    /* Sections */
+
+    section {
+      padding: 2.5rem 0;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 1rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .section-subtitle {
+      font-size: 0.86rem;
+      color: var(--muted);
+      max-width: 26rem;
+    }
+
+    /* About */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 1.8rem;
+    }
+
+    .about-lead {
+      font-size: 0.98rem;
+      color: #e5e7eb;
+      margin-bottom: 0.9rem;
+    }
+
+    .about-body {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .about-pill-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .pill {
+      font-size: 0.78rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--muted);
+    }
+
+    .about-card {
+      border-radius: var(--radius-lg);
+      padding: 1.1rem;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      background: radial-gradient(circle at 0 0, rgba(37, 99, 235, 0.16), rgba(15, 23, 42, 0.96));
+      box-shadow: var(--shadow-soft);
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .about-card strong {
+      color: #e5e7eb;
+    }
+
+    /* Services */
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .service-card {
+      border-radius: var(--radius-lg);
+      padding: 1rem;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      transition: transform 0.18s ease-out, box-shadow 0.18s ease-out, border-color 0.18s ease-out, background 0.18s ease-out;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
+      border-color: rgba(251, 191, 36, 0.6);
+      background: radial-gradient(circle at top left, rgba(251, 191, 36, 0.1), rgba(15, 23, 42, 0.98));
+    }
+
+    .service-kicker {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(148, 163, 184, 0.9);
+      margin-bottom: 0.2rem;
+    }
+
+    .service-title {
+      font-size: 1.02rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .service-desc {
+      font-size: 0.86rem;
+      color: var(--muted);
+      margin-bottom: 0.7rem;
+    }
+
+    .service-list {
+      list-style: none;
+      font-size: 0.8rem;
+      color: #9ca3af;
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    .service-list li::before {
+      content: "▹";
+      margin-right: 0.35rem;
+      color: #facc15;
+      font-size: 0.9rem;
+    }
+
+    /* Contact */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 1.7rem;
+    }
+
+    .contact-card {
+      border-radius: var(--radius-lg);
+      padding: 1.1rem;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      box-shadow: var(--shadow-soft);
+    }
+
+    form {
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    .field-group {
+      display: grid;
+      gap: 0.25rem;
+      font-size: 0.85rem;
+    }
+
+    label {
+      color: #e5e7eb;
+    }
+
+    input,
+    textarea {
+      padding: 0.55rem 0.7rem;
+      border-radius: 12px;
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      background: rgba(15, 23, 42, 0.9);
+      color: #e5e7eb;
+      font-family: inherit;
+      font-size: 0.85rem;
+      outline: none;
+      transition: border-color 0.18s ease-out, box-shadow 0.18s ease-out, background 0.18s ease-out;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: rgba(148, 163, 184, 0.7);
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: rgba(251, 191, 36, 0.8);
+      box-shadow: 0 0 0 1px rgba(251, 191, 36, 0.35);
+      background: rgba(15, 23, 42, 0.98);
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .contact-details {
+      font-size: 0.88rem;
+      color: var(--muted);
+      display: grid;
+      gap: 0.6rem;
+    }
+
+    .contact-details-item strong {
+      color: #e5e7eb;
+    }
+
+    .contact-highlight {
+      margin-top: 0.6rem;
+      padding: 0.6rem 0.75rem;
+      border-radius: 16px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px dashed rgba(251, 191, 36, 0.5);
+      font-size: 0.8rem;
+      color: rgba(250, 250, 249, 0.9);
+    }
+
+    /* Footer */
+
+    footer {
+      border-top: 1px solid rgba(148, 163, 184, 0.25);
+      padding: 1.2rem 0 1.8rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-right {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-right a {
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      text-underline-offset: 3px;
+    }
+
+    /* Utilities */
+
+    .text-accent {
+      color: #facc15;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    /* Animations */
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.6);
+      }
+      70% {
+        box-shadow: 0 0 0 10px rgba(250, 204, 21, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(250, 204, 21, 0);
+      }
+    }
+
+    /* Responsive */
+
+    @media (max-width: 960px) {
+      .hero-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-grid {
+        gap: 2rem;
+      }
+
+      .hero {
+        padding-top: 2.2rem;
+      }
+
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-links,
+      .nav-cta {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav-mobile {
+        display: none;
+        flex-direction: column;
+        gap: 0.2rem;
+        margin-top: 0.4rem;
+        padding-bottom: 0.7rem;
+      }
+
+      .nav-mobile.open {
+        display: flex;
+      }
+
+      .nav-mobile a {
+        font-size: 0.9rem;
+        color: var(--muted);
+        padding: 0.2rem 0;
+      }
+
+      .nav-mobile a:hover {
+        color: var(--text);
+      }
+
+      .nav-mobile .btn {
+        align-self: flex-start;
+        margin-top: 0.5rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .service-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .container {
+        padding: 0 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="site-wrapper">
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <div class="logo">
+          <div class="logo-mark">
+            <span>K</span>
+          </div>
+          <div class="logo-text">
+            <div class="logo-text-main">Kasana Global Ventures</div>
+            <div class="logo-text-sub">Technology • AI • Automation</div>
+          </div>
+        </div>
+
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="nav-cta">
+          <a href="#contact" class="btn-outline btn">Book a Strategy Call</a>
+          <a href="#contact" class="btn">
+            <span class="pulse-dot"></span>
+            Talk to Us
+          </a>
+        </div>
+
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+
+      <div class="nav-mobile" id="navMobile">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="btn">Talk to Us</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main>
+    <!-- Home / Hero -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">
+              <span class="eyebrow-dot"></span>
+              Kasana Global Ventures · Technology, AI & Automation
+            </div>
+
+            <h1 class="hero-title">
+              <span class="highlight">Building Tomorrow's Opportunities Today</span><br />
+              with intelligent technology, AI, and automation.
+            </h1>
+
+            <p class="hero-subtitle">
+              Kasana Global Ventures partners with growth-focused businesses to design and deploy
+              practical, revenue-focused AI and automation solutions—so your team can focus on
+              high-value work while systems handle the rest.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#contact" class="btn">
+                <span class="pulse-dot"></span>
+                Schedule a Free Consultation
+              </a>
+              <a href="#services" class="btn-outline btn">Explore Our Services</a>
+            </div>
+
+            <div class="hero-meta">
+              <div class="hero-meta-item">
+                <span class="hero-meta-dot"></span>
+                <span>Custom solutions for Indian and global businesses</span>
+              </div>
+              <div class="hero-meta-item">
+                <span class="hero-meta-dot"></span>
+                <span>Ideal for founders, SMEs, and scaling teams</span>
+              </div>
+            </div>
+          </div>
+
+          <aside class="hero-card" aria-label="Kasana Global Ventures at a glance">
+            <div class="hero-card-glow"></div>
+            <div class="hero-card-inner">
+              <div class="hero-card-header">
+                <div class="badge">
+                  <span class="badge-dot"></span>
+                  Applied AI Strategy
+                </div>
+                <div class="hero-card-title">From vision to deployment</div>
+              </div>
+
+              <div class="hero-metrics">
+                <div class="metric">
+                  <div class="metric-label">AI & Automation</div>
+                  <div class="metric-value">
+                    3x faster
+                    <span class="accent">process execution</span>
+                  </div>
+                </div>
+                <div class="metric">
+                  <div class="metric-label">Decision Support</div>
+                  <div class="metric-value">
+                    Data-driven
+                    <span class="accent">insights on demand</span>
+                  </div>
+                </div>
+                <div class="metric">
+                  <div class="metric-label">Implementation</div>
+                  <div class="metric-value">
+                    End-to-end
+                    <span class="accent">solution design</span>
+                  </div>
+                </div>
+                <div class="metric">
+                  <div class="metric-label">Support</div>
+                  <div class="metric-value">
+                    Ongoing
+                    <span class="accent">optimization & care</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="hero-card-footer">
+                <div>Ideal for businesses ready to modernize operations.</div>
+                <div class="timeline-indicator">
+                  <span>Start with a 30-minute call</span>
+                  <span class="line"></span>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">About Kasana Global Ventures</h2>
+          </div>
+          <p class="section-subtitle">
+            We exist to help businesses turn technology and AI into clear, measurable outcomes:
+            higher efficiency, better customer experiences, and stronger profitability.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div>
+            <p class="about-lead">
+              Kasana Global Ventures is a technology-driven firm focused on
+              <span class="text-accent">AI solutions, intelligent automation, and digital transformation</span>.
+              We work with founders and leadership teams who want to move from manual, fragmented processes
+              to streamlined, AI-powered operations.
+            </p>
+            <p class="about-body">
+              Rather than chasing buzzwords, we focus on practical, business-first implementations:
+              automation that reduces workload, AI that supports real decision-making, and systems that scale as you grow.
+              Our approach is collaborative—we map your current workflows, identify quick wins, and then design a clear roadmap
+              for implementation, training, and support.
+            </p>
+
+            <div class="about-pill-group">
+              <span class="pill">AI-assisted workflows</span>
+              <span class="pill">Business process automation</span>
+              <span class="pill">Data-driven decision support</span>
+              <span class="pill">Custom integrations</span>
+              <span class="pill">Founders & SMEs focused</span>
+            </div>
+          </div>
+
+          <aside class="about-card">
+            <p>
+              <strong>What makes us different?</strong><br /><br />
+              We blend <strong>business thinking</strong> with <strong>hands-on technology execution</strong>.
+              Every engagement is framed around a simple question:
+              <em>“How does this move your business forward in the next 3–12 months?”</em><br /><br />
+              Whether you are just starting with AI or ready to scale existing systems, Kasana Global Ventures
+              helps you build technology capabilities that are robust, understandable, and fully aligned with your goals.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Services & Solutions</h2>
+          <p class="section-subtitle">
+            From strategy and consulting to implementation and optimization, we support your full journey
+            into AI, automation, and modern technology infrastructure.
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="service-kicker">01 · AI Strategy & Consulting</div>
+            <h3 class="service-title">AI Roadmap for Your Business</h3>
+            <p class="service-desc">
+              Clarify where AI can add real value today in your operations, sales, and customer experience—
+              without overwhelming your team.
+            </p>
+            <ul class="service-list">
+              <li>Assessment of existing processes & tools</li>
+              <li>AI use-case identification and prioritization</li>
+              <li>Roadmap for 3, 6, and 12 months</li>
+              <li>High-level architecture and tool recommendations</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="service-kicker">02 · Automation & Workflows</div>
+            <h3 class="service-title">Process Automation & Systems</h3>
+            <p class="service-desc">
+              Reduce manual, repetitive work by connecting your tools and automating critical workflows end-to-end.
+            </p>
+            <ul class="service-list">
+              <li>Lead capture to follow-up automation</li>
+              <li>Internal task and approval workflows</li>
+              <li>Integration across CRM, email, and other tools</li>
+              <li>Monitoring, alerts, and performance reporting</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="service-kicker">03 · Applied AI Solutions</div>
+            <h3 class="service-title">Custom AI-Powered Experiences</h3>
+            <p class="service-desc">
+              Design AI-driven touchpoints for your customers and team—chatbots, assistants, and tailored solutions.
+            </p>
+            <ul class="service-list">
+              <li>AI assistants for support and FAQs</li>
+              <li>Knowledge-base and document Q&A systems</li>
+              <li>AI tools for internal teams and operations</li>
+              <li>Ongoing tuning and optimization</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Contact & Next Steps</h2>
+          <p class="section-subtitle">
+            Share a bit about your business and what you want to improve. We will review and come back with
+            practical, no-nonsense ideas on how AI and automation can support you.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <form action="https://formsubmit.co/kasanaglobalventures@gmail.com" method="POST">
+              <!-- FormSubmit options -->
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_subject" value="New enquiry from Kasana Global Ventures website" />
+              <input type="hidden" name="_template" value="table" />
+
+              <div class="field-group">
+                <label for="name">Full Name</label>
+                <input id="name" name="name" type="text" required placeholder="Your name" />
+              </div>
+
+              <div class="field-group">
+                <label for="email">Business Email</label>
+                <input id="email" name="email" type="email" required placeholder="name@company.com" />
+              </div>
+
+              <div class="field-group">
+                <label for="company">Company / Brand (optional)</label>
+                <input id="company" name="company" type="text" placeholder="Company or brand name" />
+              </div>
+
+              <div class="field-group">
+                <label for="service">What are you most interested in?</label>
+                <input id="service" name="service" type="text" placeholder="AI strategy, automation, internal tools, etc." />
+              </div>
+
+              <div class="field-group">
+                <label for="message">Tell us about your goals</label>
+                <textarea id="message" name="message" required placeholder="Where do you think AI or automation could help you the most?"></textarea>
+              </div>
+
+              <button type="submit" class="btn">
+                <span class="pulse-dot"></span>
+                Submit Enquiry
+              </button>
+            </form>
+          </div>
+
+          <div class="contact-details">
+            <div class="contact-details-item">
+              <strong>Email</strong><br />
+              <a href="mailto:kasanaglobalventures@gmail.com">kasanaglobalventures@gmail.com</a>
+            </div>
+
+            <div class="contact-details-item">
+              <strong>Phone / WhatsApp</strong><br />
+              <span>+91 99XXXXXXXX</span>
+            </div>
+
+            <div class="contact-details-item">
+              <strong>Typical focus areas</strong><br />
+              Founders and teams who want to modernize operations, build AI-assisted workflows, and
+              free their time from repetitive manual tasks.
+            </div>
+
+            <div class="contact-highlight">
+              Once you submit the form, you will receive a confirmation email (first time only). After that,
+              enquiries will come directly to your inbox so you can reply and continue the conversation.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div>© <span id="year"></span> Kasana Global Ventures. All rights reserved.</div>
+        <div class="footer-right">
+          <span>Technology · AI · Automation</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+  // Mobile nav toggle
+  const navToggle = document.querySelector(".nav-toggle");
+  const navMobile = document.getElementById("navMobile");
+
+  if (navToggle && navMobile) {
+    navToggle.addEventListener("click", () => {
+      navMobile.classList.toggle("open");
+    });
+
+    navMobile.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navMobile.classList.remove("open");
+      });
+    });
+  }
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      const targetId = this.getAttribute("href").substring(1);
+      const target = document.getElementById(targetId);
+
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  });
+
+  // Dynamic year in footer
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
