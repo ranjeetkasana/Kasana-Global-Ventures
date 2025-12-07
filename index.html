@@ -1042,14 +1042,48 @@
           </p>
         </div>
 
-        <div class="contact-grid">
-          <div class="contact-card">
-           <input type="hidden" name="access_key" value="5b209150-db55-4ec5-87cf-090a26c5206e'>
-             <input type="hidden" name="redirect" value="https://kasanaglobal.com/thankyou.html">
-              <!-- FormSubmit options -->
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_subject" value="New enquiry from Kasana Global Ventures website" />
-              <input type="hidden" name="_template" value="table" />
+        <div class="contact-card">
+
+  <form action="https://api.web3forms.com/submit" method="POST">
+
+    <input type="hidden" name="access_key" value="5b209150-db55-4ec5-87cf-090a26c5206e">
+    <input type="hidden" name="redirect" value="https://kasanaglobal.com/thankyou.html">
+
+    <div class="field-group">
+      <label for="name">Full Name</label>
+      <input id="name" name="name" type="text" required placeholder="Your name" />
+    </div>
+
+    <div class="field-group">
+      <label for="email">Business Email</label>
+      <input id="email" name="email" type="email" required placeholder="name@company.com" />
+    </div>
+
+    <div class="field-group">
+      <label for="company">Company / Brand (optional)</label>
+      <input id="company" name="company" type="text" placeholder="Company or brand name" />
+    </div>
+
+    <div class="field-group">
+      <label for="service">What are you most interested in?</label>
+      <input id="service" name="service" type="text" placeholder="AI strategy, automation, internal tools, etc." />
+    </div>
+
+    <div class="field-group">
+      <label for="message">Tell us about your goals</label>
+      <textarea id="message" name="message" required placeholder="Where do you think AI or automation could help you the most?"></textarea>
+    </div>
+
+    <button type="submit" class="btn">
+      <span class="pulse-dot"></span>
+      Submit Enquiry
+    </button>
+
+  </form>
+
+</div>
+
+
 
               <div class="field-group">
                 <label for="name">Full Name</label>
