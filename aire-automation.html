@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A.I.R.E Automation | AI Real Estate Automation by Kasana Global Ventures</title>
+  <meta name="description" content="A.I.R.E Automation is an advanced AI-powered automation system for real estate brokers, channel partners, and developers. Automate lead generation, WhatsApp sales, follow-ups, referrals, and analytics." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary: #020617;
+      --primary-light: #111827;
+      --accent: #fbbf24;
+      --accent-strong: #facc15;
+      --accent-soft: rgba(251, 191, 36, 0.1);
+      --bg: #020617;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border-subtle: rgba(148, 163, 184, 0.35);
+      --radius-lg: 20px;
+      --radius-pill: 999px;
+      --max-width: 1120px;
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.85);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #0f172a 0, #020617 52%, #000 100%);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .site-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Header / Nav */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(to bottom, rgba(2, 6, 23, 0.96), rgba(2, 6, 23, 0.7), transparent);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.8rem 0;
+      gap: 1.5rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+
+    .logo-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 16px;
+      background: radial-gradient(circle at 20% 0, #facc15 0, #f97316 40%, #111827 80%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 12px 30px rgba(250, 204, 21, 0.4);
+      border: 1px solid rgba(15, 23, 42, 0.85);
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #020617;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .logo-text-main {
+      font-size: 1rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .logo-text-sub {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding: 0.2rem 0;
+      color: var(--muted);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(to right, #fbbf24, #f97316);
+      transition: width 0.25s ease-out;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-links a.active {
+      color: var(--accent-strong);
+      font-weight: 500;
+    }
+
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.65rem 1.4rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.88rem;
+      font-weight: 500;
+      border: 1px solid rgba(251, 191, 36, 0.5);
+      background: radial-gradient(circle at top left, rgba(250, 204, 21, 0.18), rgba(15, 23, 42, 0.98));
+      color: #fefce8;
+      cursor: pointer;
+      box-shadow: 0 15px 35px rgba(15, 23, 42, 0.9);
+      transition: all 0.2s ease-out;
+      white-space: nowrap;
+    }
+
+    .btn span.pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      margin-right: 0.5rem;
+      background: #facc15;
+      box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.7);
+      animation: pulse 1.6s infinite;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.85);
+      border-color: rgba(251, 191, 36, 0.85);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border-color: rgba(148, 163, 184, 0.7);
+      color: var(--muted);
+      box-shadow: none;
+    }
+
+    .btn-outline:hover {
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--text);
+      border-color: rgba(148, 163, 184, 1);
+    }
+
+    .nav-toggle {
+      display: none;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: #e5e7eb;
+      border-radius: 999px;
+      margin: 4px 0;
+      transition: all 0.2s ease-out;
+    }
+
+    /* Hero */
+    main { flex: 1; }
+
+    section { padding: 2.6rem 0; }
+
+    .hero {
+      padding-top: 2.8rem;
+      padding-bottom: 2.4rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+      gap: 2.4rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.16rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.95);
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .eyebrow-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 0, #facc15 0, #f97316 50%, transparent 100%);
+      box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.4);
+      animation: pulse 1.8s infinite;
+    }
+
+    .hero-title {
+      font-size: clamp(2.1rem, 3vw + 1rem, 2.7rem);
+      line-height: 1.15;
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-title span.highlight {
+      background: linear-gradient(to right, #fbbf24, #f97316);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 0.98rem;
+      color: var(--muted);
+      max-width: 34rem;
+      margin-bottom: 1.3rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-meta-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .hero-meta-pill {
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .hero-card {
+      border-radius: var(--radius-lg);
+      padding: 1.3rem;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: radial-gradient(circle at 0 0, rgba(251, 191, 36, 0.12), rgba(15, 23, 42, 0.97));
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: rgba(249, 250, 251, 0.75);
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-card-subtitle {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-highlight-list {
+      list-style: none;
+      display: grid;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+    }
+
+    .hero-highlight-list li::before {
+      content: "✔";
+      margin-right: 0.45rem;
+      color: #facc15;
+      font-size: 0.9rem;
+    }
+
+    /* Sections Common */
+    .section-header {
+      margin-bottom: 1.7rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: flex-end;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .section-kicker {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: rgba(148, 163, 184, 0.9);
+      margin-bottom: 0.25rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.86rem;
+      color: var(--muted);
+      max-width: 26rem;
+    }
+
+    /* About */
+    .about-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 1.8rem;
+    }
+
+    .about-text {
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .about-text strong {
+      color: #e5e7eb;
+    }
+
+    .about-pill-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.8rem;
+    }
+
+    .about-pill {
+      padding: 0.32rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      font-size: 0.78rem;
+      color: var(--muted);
+      background: rgba(15, 23, 42, 0.95);
+    }
+
+    .about-card {
+      border-radius: var(--radius-lg);
+      padding: 1rem;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: radial-gradient(circle at 0 0, rgba(37, 99, 235, 0.18), rgba(15, 23, 42, 0.97));
+      font-size: 0.88rem;
+      color: var(--muted);
+      box-shadow: var(--shadow-soft);
+    }
+
+    /* Agents */
+    .agents-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .agent-card {
+      border-radius: var(--radius-lg);
+      padding: 1rem;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.96);
+      position: relative;
+      overflow: hidden;
+      font-size: 0.86rem;
+      color: var(--muted);
+      transition: transform 0.18s ease-out, box-shadow 0.18s ease-out, border-color 0.18s ease-out;
+    }
+
+    .agent-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
+      border-color: rgba(251, 191, 36, 0.7);
+    }
+
+    .agent-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: rgba(148, 163, 184, 0.85);
+      margin-bottom: 0.2rem;
+    }
+
+    .agent-title {
+      font-size: 1rem;
+      margin-bottom: 0.35rem;
+      color: #f9fafb;
+    }
+
+    .agent-list {
+      list-style: none;
+      margin-top: 0.5rem;
+      display: grid;
+      gap: 0.3rem;
+      font-size: 0.82rem;
+    }
+
+    .agent-list li::before {
+      content: "▹";
+      margin-right: 0.35rem;
+      color: #facc15;
+    }
+
+    /* Who it's for */
+    .who-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .who-card {
+      border-radius: var(--radius-lg);
+      padding: 1rem;
+      border: 1px dashed rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.95);
+      font-size: 0.88rem;
+    }
+
+    .who-list {
+      list-style: none;
+      margin-top: 0.5rem;
+      display: grid;
+      gap: 0.25rem;
+      font-size: 0.86rem;
+    }
+
+    .who-list li::before {
+      content: "✔";
+      margin-right: 0.4rem;
+      color: #facc15;
+    }
+
+    /* Why choose */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .why-card {
+      border-radius: var(--radius-lg);
+      padding: 1rem;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.96);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .why-title {
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+      color: #f9fafb;
+    }
+
+    /* Pricing */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .price-card {
+      border-radius: var(--radius-lg);
+      padding: 1.1rem;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.97);
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.85);
+      font-size: 0.86rem;
+      color: var(--muted);
+      position: relative;
+    }
+
+    .price-card.highlight {
+      border-color: rgba(251, 191, 36, 0.9);
+      background: radial-gradient(circle at top left, rgba(251, 191, 36, 0.16), rgba(15, 23, 42, 0.98));
+    }
+
+    .price-plan {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: rgba(249, 250, 251, 0.9);
+      margin-bottom: 0.4rem;
+    }
+
+    .price-amount {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #fefce8;
+      margin-bottom: 0.2rem;
+    }
+
+    .price-note {
+      font-size: 0.75rem;
+      color: rgba(148, 163, 184, 0.9);
+      margin-bottom: 0.6rem;
+    }
+
+    .price-list {
+      list-style: none;
+      display: grid;
+      gap: 0.3rem;
+      font-size: 0.82rem;
+    }
+
+    .price-list li::before {
+      content: "•";
+      margin-right: 0.3rem;
+      color: #facc15;
+    }
+
+    .price-tag {
+      position: absolute;
+      top: 0.7rem;
+      right: 0.8rem;
+      font-size: 0.7rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(251, 191, 36, 0.9);
+      color: #fefce8;
+    }
+
+    .setup-fee {
+      margin-top: 1rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    /* FAQ */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 1.6rem;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 0.8rem;
+      font-size: 0.86rem;
+    }
+
+    .faq-item {
+      border-radius: 14px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      background: rgba(15, 23, 42, 0.98);
+      padding: 0.7rem 0.8rem;
+    }
+
+    .faq-q {
+      font-weight: 500;
+      font-size: 0.88rem;
+      margin-bottom: 0.25rem;
+      color: #f9fafb;
+    }
+
+    .faq-a {
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    /* CTA Contact */
+    .cta-block {
+      border-radius: var(--radius-lg);
+      padding: 1.4rem 1.3rem;
+      border: 1px solid rgba(251, 191, 36, 0.75);
+      background: radial-gradient(circle at 0 0, rgba(251, 191, 36, 0.16), rgba(15, 23, 42, 0.96));
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .cta-text-main {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .cta-text-sub {
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 0.7rem;
+      flex-wrap: wrap;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid rgba(148, 163, 184, 0.25);
+      padding: 1.2rem 0 1.8rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    /* Utilities & Animations */
+    .text-accent { color: #facc15; }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.6); }
+      70% { box-shadow: 0 0 0 10px rgba(250, 204, 21, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(250, 204, 21, 0); }
+    }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .hero-grid,
+      .about-layout,
+      .faq-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .agents-grid,
+      .why-grid,
+      .pricing-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero { padding-top: 2.1rem; }
+    }
+
+    @media (max-width: 720px) {
+      .nav-links,
+      .nav-cta { display: none; }
+
+      .nav-toggle { display: block; }
+
+      .nav-mobile {
+        display: none;
+        flex-direction: column;
+        gap: 0.3rem;
+        padding-bottom: 0.7rem;
+      }
+
+      .nav-mobile.open { display: flex; }
+
+      .nav-mobile a {
+        font-size: 0.9rem;
+        color: var(--muted);
+        padding: 0.2rem 0;
+      }
+
+      .nav-mobile a:hover { color: var(--text); }
+
+      .nav-mobile .btn { margin-top: 0.6rem; }
+
+      .hero-grid { gap: 1.8rem; }
+
+      .agents-grid,
+      .why-grid,
+      .pricing-grid,
+      .who-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .container { padding: 0 1.2rem; }
+
+      .cta-block {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="site-wrapper">
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="logo">
+          <div class="logo-mark">K</div>
+          <div class="logo-text">
+            <div class="logo-text-main">Kasana Global Ventures</div>
+            <div class="logo-text-sub">Technology • AI • Automation</div>
+          </div>
+        </a>
+
+        <div class="nav-links">
+          <a href="index.html#home">Home</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#services">Services</a>
+          <a href="aire-automation.html" class="active">A.I.R.E Automation</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+
+        <div class="nav-cta">
+          <a href="#pricing" class="btn-outline btn">View Pricing</a>
+          <a href="#cta" class="btn"><span class="pulse-dot"></span>Book a Demo</a>
+        </div>
+
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span><span></span>
+        </button>
+      </nav>
+
+      <div class="nav-mobile" id="navMobile">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#services">Services</a>
+        <a href="aire-automation.html">A.I.R.E Automation</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="#cta" class="btn">Book a Demo</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main>
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">
+              <span class="eyebrow-dot"></span>
+              A.I.R.E Automation · Real Estate AI Suite
+            </div>
+            <h1 class="hero-title">
+              <span class="highlight">AI-Powered Real Estate Automation</span><br />
+              for modern brokers & developers.
+            </h1>
+            <p class="hero-subtitle">
+              Grow your real estate business on autopilot with AI-driven lead generation, WhatsApp automation,
+              follow-ups, analytics, and referral systems—designed for Indian markets and global investors.
+            </p>
+            <div class="hero-actions">
+              <a href="#cta" class="btn">
+                <span class="pulse-dot"></span>
+                Book a Demo
+              </a>
+              <a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%20want%20to%20know%20more%20about%20A.I.R.E%20Real%20Estate%20Automation" class="btn-outline btn" target="_blank">
+                WhatsApp Us
+              </a>
+            </div>
+            <div class="hero-meta-list">
+              <span class="hero-meta-pill">✔ 24/7 WhatsApp Sales Bot</span>
+              <span class="hero-meta-pill">✔ Automated Lead Generation</span>
+              <span class="hero-meta-pill">✔ Auto Follow-Ups</span>
+              <span class="hero-meta-pill">✔ Site Visit Booking Bot</span>
+              <span class="hero-meta-pill">✔ Reviews & Referrals</span>
+              <span class="hero-meta-pill">✔ Monthly Analytics Reports</span>
+            </div>
+          </div>
+
+          <aside class="hero-card">
+            <div class="hero-card-title">Real Estate, Rebuilt with AI</div>
+            <div class="hero-card-subtitle">
+              Designed for brokers, channel partners, and developers who want a serious sales engine—not just a chatbot.
+            </div>
+            <ul class="hero-highlight-list">
+              <li>Automate 80% of sales operations with AI agents.</li>
+              <li>Capture, nurture, and convert leads across NCR, Bangalore, Hyderabad, and beyond.</li>
+              <li>Plug into WhatsApp, portals, and your existing CRM without technical stress.</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">About A.I.R.E Automation</div>
+            <h2 class="section-title">India’s most advanced AI automation system for real estate.</h2>
+          </div>
+          <p class="section-subtitle">
+            Built specifically for real estate brokers, channel partners, and developers who want consistent,
+            pipeline-focused automation instead of manual follow-up chaos.
+          </p>
+        </div>
+
+        <div class="about-layout">
+          <div class="about-text">
+            <p>
+              <strong>A.I.R.E Automation</strong> is a next-generation AI platform designed to automate
+              <strong>up to 80% of your sales operations</strong>—so your team can focus on serious buyers and final closings.
+            </p>
+            <br />
+            <p>
+              Our system already supports leading markets across <strong>Delhi NCR, Bangalore, and Hyderabad</strong>, and works
+              seamlessly with all common property categories:
+            </p>
+            <div class="about-pill-grid">
+              <span class="about-pill">Apartments</span>
+              <span class="about-pill">Villas</span>
+              <span class="about-pill">Commercial offices</span>
+              <span class="about-pill">Shops & SCOs</span>
+              <span class="about-pill">Residential & commercial plots</span>
+              <span class="about-pill">Investment properties</span>
+            </div>
+            <br />
+            <p>
+              Premium. Intelligent. Fully automated.
+              <strong>Just plug it in—AI handles the daily grind.</strong>
+            </p>
+          </div>
+
+          <aside class="about-card">
+            <p>
+              A.I.R.E sits on top of your existing channels and tools, creating a
+              <strong>single intelligent layer</strong>
+              that manages lead capture, nurturing, follow-ups, and post-sales relationships.
+            </p>
+            <br />
+            <p>
+              Instead of hiring more calling staff or chasing every portal lead manually, you give your business
+              a <strong>24/7 AI sales team</strong> that never forgets a follow-up, never misses a site visit reminder,
+              and never stops building your pipeline.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- AGENTS -->
+    <section id="agents">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">The 5 AI Agents</div>
+            <h2 class="section-title">The AI agents that power your real estate engine.</h2>
+          </div>
+          <p class="section-subtitle">
+            Each module is an “AI agent” focused on one mission—together they build a fully automated real estate growth system.
+          </p>
+        </div>
+
+        <div class="agents-grid">
+          <article class="agent-card">
+            <div class="agent-label">Agent 01 · Lead Engine</div>
+            <h3 class="agent-title">AI Lead Generator</h3>
+            <p>
+              Finds and filters qualified buyers from multiple digital touchpoints and fills your pipeline daily.
+            </p>
+            <ul class="agent-list">
+              <li>Scans Google & Maps for local intent.</li>
+              <li>Connects via Facebook & Instagram groups.</li>
+              <li>Leverages YouTube, content, and property portals.</li>
+              <li>Auto-initiates outreach to interested prospects.</li>
+            </ul>
+          </article>
+
+          <article class="agent-card">
+            <div class="agent-label">Agent 02 · Sales Desk</div>
+            <h3 class="agent-title">WhatsApp Property Sales Bot</h3>
+            <p>
+              Your always-on digital sales executive that responds instantly and keeps the client engaged.
+            </p>
+            <ul class="agent-list">
+              <li>Shares brochures, floor plans, and videos on demand.</li>
+              <li>Provides pricing, availability, and configuration details.</li>
+              <li>Answers FAQs without human intervention.</li>
+              <li>Books and confirms site visits automatically.</li>
+            </ul>
+          </article>
+
+          <article class="agent-card">
+            <div class="agent-label">Agent 03 · Nurture</div>
+            <h3 class="agent-title">AI Follow-Up Bot</h3>
+            <p>
+              Ensures no qualified lead is forgotten, no matter how busy your team gets.
+            </p>
+            <ul class="agent-list">
+              <li>Automated follow-ups every 2–4 days.</li>
+              <li>Shares price updates and new launch alerts.</li>
+              <li>Sends urgency and comparison messages.</li>
+              <li>Warms up colder leads over time.</li>
+            </ul>
+          </article>
+
+          <article class="agent-card">
+            <div class="agent-label">Agent 04 · Reputation & Referrals</div>
+            <h3 class="agent-title">Review & Referral Collector</h3>
+            <p>
+              Turns each client into a marketing asset by asking at the right time, in the right way.
+            </p>
+            <ul class="agent-list">
+              <li>Collects Google and portal reviews.</li>
+              <li>Asks for short written testimonials.</li>
+              <li>Encourages referrals from happy buyers.</li>
+              <li>Builds long-term brand equity on autopilot.</li>
+            </ul>
+          </article>
+
+          <article class="agent-card">
+            <div class="agent-label">Agent 05 · Intelligence</div>
+            <h3 class="agent-title">Monthly Analytics Agent</h3>
+            <p>
+              Gives you a monthly command-center view of your operations in simple, understandable language.
+            </p>
+            <ul class="agent-list">
+              <li>Leads generated and qualified.</li>
+              <li>Conversations and meetings booked.</li>
+              <li>Conversions and referral performance.</li>
+              <li>City-wise and project-wise insight snapshots.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHO IT'S FOR -->
+    <section id="who">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">Who this is for</div>
+            <h2 class="section-title">Built for serious real estate players.</h2>
+          </div>
+          <p class="section-subtitle">
+            Whether you’re handling 20 leads a month or 2,000, A.I.R.E scales your processes without adding headcount.
+          </p>
+        </div>
+
+        <div class="who-grid">
+          <div class="who-card">
+            <strong>Ideal users:</strong>
+            <ul class="who-list">
+              <li>Real estate brokers & independent consultants.</li>
+              <li>Channel partners and aggregator networks.</li>
+              <li>Developers & builders with in-house sales teams.</li>
+              <li>Real estate marketing agencies & performance teams.</li>
+            </ul>
+          </div>
+          <div class="who-card">
+            <strong>Where it shines:</strong>
+            <ul class="who-list">
+              <li>High-volume project launches and pre-launches.</li>
+              <li>Ongoing inventory sales with multiple projects.</li>
+              <li>NRI and investor-focused sales funnels.</li>
+              <li>Teams that want to systemize leads, not chase them.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE -->
+    <section id="why">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">Why A.I.R.E</div>
+            <h2 class="section-title">Why leading real estate teams choose A.I.R.E Automation.</h2>
+          </div>
+          <p class="section-subtitle">
+            It’s not just “AI for show”. It’s a full-stack, sales-focused system built around the realities of Indian real estate.
+          </p>
+        </div>
+
+        <div class="why-grid">
+          <div class="why-card">
+            <h3 class="why-title">24/7 Sales Execution</h3>
+            <p>
+              Your AI bot answers instantly, shares details, books visits, and keeps clients engaged—even when your team is offline or in meetings.
+            </p>
+          </div>
+          <div class="why-card">
+            <h3 class="why-title">80% Sales Tasks Automated</h3>
+            <p>
+              You focus on serious buyers and closing. A.I.R.E handles early conversations, nurturing, data sharing, and reminders.
+            </p>
+          </div>
+          <div class="why-card">
+            <h3 class="why-title">Premium Communication</h3>
+            <p>
+              Modern, clear language tuned for NCR, Bangalore, Hyderabad buyers and NRI investors—even if your team is juggling multiple projects.
+            </p>
+          </div>
+          <div class="why-card">
+            <h3 class="why-title">All Property Types Supported</h3>
+            <p>
+              From residential towers to SCOs, plots, and commercial investments—A.I.R.E adapts to your inventory strategy.
+            </p>
+          </div>
+          <div class="why-card">
+            <h3 class="why-title">Modern Tech Stack</h3>
+            <p>
+              WhatsApp API + ChatGPT–grade intelligence + automation engine + CRM integrations, without technical headaches.
+            </p>
+          </div>
+          <div class="why-card">
+            <h3 class="why-title">Zero Technical Overload</h3>
+            <p>
+              We implement end-to-end. Your team receives a ready-to-use system with training, playbooks, and ongoing optimization options.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">Pricing</div>
+            <h2 class="section-title">Simple plans built around your pipeline size.</h2>
+          </div>
+          <p class="section-subtitle">
+            Start lean and scale as your deal flow and inventory grow. Every plan includes support and onboarding.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="price-card">
+            <div class="price-plan">Starter Plan</div>
+            <div class="price-amount">₹9,999<span style="font-size:0.8rem; font-weight:400;">/month</span></div>
+            <div class="price-note">Ideal for solo brokers and small teams getting started with automation.</div>
+            <ul class="price-list">
+              <li>WhatsApp Sales Bot</li>
+              <li>Follow-Up Bot</li>
+              <li>Basic CRM tracking</li>
+              <li>Support for 1 city</li>
+            </ul>
+          </article>
+
+          <article class="price-card highlight">
+            <div class="price-tag">Most Popular</div>
+            <div class="price-plan">Growth Plan</div>
+            <div class="price-amount">₹19,999<span style="font-size:0.8rem; font-weight:400;">/month</span></div>
+            <div class="price-note">For teams scaling across NCR, Bangalore, and Hyderabad.</div>
+            <ul class="price-list">
+              <li>Everything in Starter</li>
+              <li>AI Lead Generator</li>
+              <li>Review & Referral Bot</li>
+              <li>Analytics dashboard & monthly reports</li>
+              <li>Support for up to 3 cities</li>
+            </ul>
+          </article>
+
+          <article class="price-card">
+            <div class="price-plan">Premium / Enterprise</div>
+            <div class="price-amount">₹29,999–₹49,999<span style="font-size:0.8rem; font-weight:400;">/month</span></div>
+            <div class="price-note">Full-stack automation for developers, large channel networks, and agencies.</div>
+            <ul class="price-list">
+              <li>Full automation system</li>
+              <li>Custom bots & workflows</li>
+              <li>API integrations & custom CRM flows</li>
+              <li>Dedicated support & optimization</li>
+              <li>Unlimited projects & enterprise features</li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="setup-fee">
+          <strong>One-time setup fee:</strong> typically between <strong>₹10,000 – ₹25,000</strong>, depending on complexity and integrations.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">FAQ</div>
+            <h2 class="section-title">Questions real estate teams ask before going live.</h2>
+          </div>
+          <p class="section-subtitle">
+            Straight answers, no jargon. If you have more questions, we’ll cover them on your demo call.
+          </p>
+        </div>
+
+        <div class="faq-grid">
+          <div class="faq-list">
+            <div class="faq-item">
+              <div class="faq-q">Is this allowed on WhatsApp?</div>
+              <div class="faq-a">
+                Yes. We work with official WhatsApp Business API partners and follow WhatsApp’s guidelines for messaging,
+                templates, and opt-ins.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q">Do I need technical knowledge to use A.I.R.E?</div>
+              <div class="faq-a">
+                No. The system is plug-and-play. Our team configures the flows, integrates tools, and provides simple SOPs
+                for your sales team to follow.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q">How fast can we go live?</div>
+              <div class="faq-a">
+                In most cases, <strong>1–3 days</strong> depending on your selected features, WhatsApp approval, and any
+                custom integrations required.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-list">
+            <div class="faq-item">
+              <div class="faq-q">Which cities do you support?</div>
+              <div class="faq-a">
+                We currently focus on <strong>Delhi NCR, Bangalore, and Hyderabad</strong> with the ability to support
+                Pan-India projects and NRI lead funnels.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q">What kind of ROI can we expect?</div>
+              <div class="faq-a">
+                While numbers vary, teams typically report <strong>3–10x better conversions</strong> thanks to instant
+                replies, structured follow-ups, and better-qualified meetings.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q">Can this work with our existing CRM or portal setup?</div>
+              <div class="faq-a">
+                Yes. In Premium plans, we integrate with your existing CRM and portals wherever possible, so you don’t
+                have to change your current tech stack—only upgrade it.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta">
+      <div class="container">
+        <div class="cta-block">
+          <div>
+            <div class="cta-text-main">
+              Ready to automate your real estate business with A.I.R.E?
+            </div>
+            <div class="cta-text-sub">
+              Share your city, inventory type, and current monthly lead volume—we’ll show you exactly how A.I.R.E can plug into your sales process.
+            </div>
+          </div>
+          <div class="cta-actions">
+            <a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%20want%20a%20demo%20of%20A.I.R.E%20Automation%20for%20my%20real%20estate%20business" target="_blank" class="btn">
+              <span class="pulse-dot"></span>
+              WhatsApp for Demo
+            </a>
+            <a href="mailto:business@kasanaglobal.com?subject=A.I.R.E%20Automation%20Demo&body=Hi%2C%0D%0A%0D%0AI%20would%20like%20to%20book%20a%20demo%20for%20A.I.R.E%20Automation.%0D%0A%0D%0ACity%3A%0D%0ACompany%3A%0D%0ALead%20volume%20per%20month%3A%0D%0A%0D%0ARegards%2C" class="btn-outline btn">
+              Email Our AI Team
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div>© <span id="year"></span> Kasana Global Ventures · A.I.R.E Automation.</div>
+        <div>Real Estate · AI · Automation</div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+  // Mobile nav toggle
+  const navToggle = document.querySelector(".nav-toggle");
+  const navMobile = document.getElementById("navMobile");
+
+  if (navToggle && navMobile) {
+    navToggle.addEventListener("click", () => {
+      navMobile.classList.toggle("open");
+    });
+
+    navMobile.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navMobile.classList.remove("open");
+      });
+    });
+  }
+
+  // Dynamic year in footer
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
