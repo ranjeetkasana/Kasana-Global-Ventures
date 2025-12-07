@@ -11,11 +11,11 @@
 
   <style>
     :root {
-      --primary: #111827;        /* dark slate */
+      --primary: #111827;
       --primary-light: #1f2937;
-      --accent: #fbbf24;         /* warm gold */
+      --accent: #fbbf24;
       --accent-soft: rgba(251, 191, 36, 0.1);
-      --bg: #020617;             /* near black */
+      --bg: #020617;
       --text: #e5e7eb;
       --muted: #9ca3af;
       --card-bg: #020617;
@@ -231,9 +231,7 @@
 
     /* Hero */
 
-    main {
-      flex: 1;
-    }
+    main { flex: 1; }
 
     .hero {
       padding: 3rem 0 2.8rem;
@@ -336,10 +334,7 @@
       pointer-events: none;
     }
 
-    .hero-card-inner {
-      position: relative;
-      z-index: 1;
-    }
+    .hero-card-inner { position: relative; z-index: 1; }
 
     .hero-card-header {
       display: flex;
@@ -431,9 +426,7 @@
 
     /* Sections */
 
-    section {
-      padding: 2.5rem 0;
-    }
+    section { padding: 2.5rem 0; }
 
     .section-header {
       display: flex;
@@ -499,9 +492,7 @@
       color: var(--muted);
     }
 
-    .about-card strong {
-      color: #e5e7eb;
-    }
+    .about-card strong { color: #e5e7eb; }
 
     /* Services */
 
@@ -589,9 +580,7 @@
       font-size: 0.85rem;
     }
 
-    label {
-      color: #e5e7eb;
-    }
+    label { color: #e5e7eb; }
 
     input,
     textarea {
@@ -607,9 +596,7 @@
     }
 
     input::placeholder,
-    textarea::placeholder {
-      color: rgba(148, 163, 184, 0.7);
-    }
+    textarea::placeholder { color: rgba(148, 163, 184, 0.7); }
 
     input:focus,
     textarea:focus {
@@ -630,9 +617,7 @@
       gap: 0.6rem;
     }
 
-    .contact-details-item strong {
-      color: #e5e7eb;
-    }
+    .contact-details-item strong { color: #e5e7eb; }
 
     .contact-highlight {
       margin-top: 0.6rem;
@@ -673,28 +658,14 @@
       text-underline-offset: 3px;
     }
 
-    /* Utilities */
-
-    .text-accent {
-      color: #facc15;
-    }
-
-    .muted {
-      color: var(--muted);
-    }
+    .text-accent { color: #facc15; }
 
     /* Animations */
 
     @keyframes pulse {
-      0% {
-        box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.6);
-      }
-      70% {
-        box-shadow: 0 0 0 10px rgba(250, 204, 21, 0);
-      }
-      100% {
-        box-shadow: 0 0 0 0 rgba(250, 204, 21, 0);
-      }
+      0% { box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.6); }
+      70% { box-shadow: 0 0 0 10px rgba(250, 204, 21, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(250, 204, 21, 0); }
     }
 
     /* Responsive */
@@ -706,13 +677,9 @@
         grid-template-columns: minmax(0, 1fr);
       }
 
-      .hero-grid {
-        gap: 2rem;
-      }
+      .hero-grid { gap: 2rem; }
 
-      .hero {
-        padding-top: 2.2rem;
-      }
+      .hero { padding-top: 2.2rem; }
 
       .section-header {
         flex-direction: column;
@@ -742,9 +709,7 @@
         padding-bottom: 0.7rem;
       }
 
-      .nav-mobile.open {
-        display: flex;
-      }
+      .nav-mobile.open { display: flex; }
 
       .nav-mobile a {
         font-size: 0.9rem;
@@ -752,9 +717,7 @@
         padding: 0.2rem 0;
       }
 
-      .nav-mobile a:hover {
-        color: var(--text);
-      }
+      .nav-mobile a:hover { color: var(--text); }
 
       .nav-mobile .btn {
         align-self: flex-start;
@@ -770,9 +733,7 @@
         grid-template-columns: minmax(0, 1fr);
       }
 
-      .container {
-        padding: 0 1.2rem;
-      }
+      .container { padding: 0 1.2rem; }
     }
   </style>
 </head>
@@ -784,9 +745,7 @@
     <div class="container">
       <nav class="nav">
         <div class="logo">
-          <div class="logo-mark">
-            <span>K</span>
-          </div>
+          <div class="logo-mark"><span>K</span></div>
           <div class="logo-text">
             <div class="logo-text-main">Kasana Global Ventures</div>
             <div class="logo-text-sub">Technology • AI • Automation</div>
@@ -809,8 +768,7 @@
         </div>
 
         <button class="nav-toggle" aria-label="Toggle navigation">
-          <span></span>
-          <span></span>
+          <span></span><span></span>
         </button>
       </nav>
 
@@ -926,9 +884,7 @@
     <section id="about">
       <div class="container">
         <div class="section-header">
-          <div>
-            <h2 class="section-title">About Kasana Global Ventures</h2>
-          </div>
+          <div><h2 class="section-title">About Kasana Global Ventures</h2></div>
           <p class="section-subtitle">
             We exist to help businesses turn technology and AI into clear, measurable outcomes:
             higher efficiency, better customer experiences, and stronger profitability.
@@ -1042,48 +998,12 @@
           </p>
         </div>
 
-        <div class="contact-card">
-
-  <form action="https://api.web3forms.com/submit" method="POST">
-
-    <input type="hidden" name="access_key" value="5b209150-db55-4ec5-87cf-090a26c5206e">
-    <input type="hidden" name="redirect" value="https://kasanaglobal.com/thankyou.html">
-
-    <div class="field-group">
-      <label for="name">Full Name</label>
-      <input id="name" name="name" type="text" required placeholder="Your name" />
-    </div>
-
-    <div class="field-group">
-      <label for="email">Business Email</label>
-      <input id="email" name="email" type="email" required placeholder="name@company.com" />
-    </div>
-
-    <div class="field-group">
-      <label for="company">Company / Brand (optional)</label>
-      <input id="company" name="company" type="text" placeholder="Company or brand name" />
-    </div>
-
-    <div class="field-group">
-      <label for="service">What are you most interested in?</label>
-      <input id="service" name="service" type="text" placeholder="AI strategy, automation, internal tools, etc." />
-    </div>
-
-    <div class="field-group">
-      <label for="message">Tell us about your goals</label>
-      <textarea id="message" name="message" required placeholder="Where do you think AI or automation could help you the most?"></textarea>
-    </div>
-
-    <button type="submit" class="btn">
-      <span class="pulse-dot"></span>
-      Submit Enquiry
-    </button>
-
-  </form>
-
-</div>
-
-
+        <div class="contact-grid">
+          <!-- LEFT: FORM -->
+          <div class="contact-card">
+            <form action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="5b209150-db55-4ec5-87cf-090a26c5206e">
+              <input type="hidden" name="redirect" value="https://kasanaglobal.com/thankyou.html">
 
               <div class="field-group">
                 <label for="name">Full Name</label>
@@ -1117,6 +1037,7 @@
             </form>
           </div>
 
+          <!-- RIGHT: DETAILS -->
           <div class="contact-details">
             <div class="contact-details-item">
               <strong>Email</strong><br />
@@ -1135,8 +1056,8 @@
             </div>
 
             <div class="contact-highlight">
-              Once you submit the form, you will receive a confirmation email (first time only). After that,
-              enquiries will come directly to your inbox so you can reply and continue the conversation.
+              Once you submit the form, enquiries will come directly to your inbox so you can reply
+              and continue the conversation.
             </div>
           </div>
         </div>
