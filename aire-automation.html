@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>A.I.R.E Automation | AI Real Estate Automation by Kasana Global Ventures</title>
-  <meta name="description" content="A.I.R.E Automation is an advanced AI-powered automation system for real estate brokers, channel partners, and developers. Automate lead generation, WhatsApp sales, follow-ups, referrals, and analytics." />
+  <meta name="description" content="A.I.R.E Automation is an advanced AI-powered automation system for real estate brokers, channel partners, and developers. Automate lead generation, WhatsApp sales, follow-ups, analytics, and referrals." />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -143,9 +143,7 @@
       font-weight: 500;
     }
 
-    .nav-links a.active::after {
-      width: 100%;
-    }
+    .nav-links a.active::after { width: 100%; }
 
     .nav-cta {
       display: flex;
@@ -509,79 +507,35 @@
       color: #f9fafb;
     }
 
-    /* Pricing */
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.2rem;
-    }
+    /* Removed pricing-specific CSS to keep stylesheet lean */
 
-    .price-card {
-      border-radius: var(--radius-lg);
+    /* Modal (Get Pricing) */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(2,6,23,0.6);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 120;
+    }
+    .modal-backdrop.open { display: flex; }
+
+    .modal {
+      background: linear-gradient(180deg, rgba(10,10,10,0.98), rgba(2,6,23,0.98));
+      border: 1px solid rgba(148,163,184,0.18);
+      border-radius: 12px;
       padding: 1.1rem;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      background: rgba(15, 23, 42, 0.97);
-      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.85);
-      font-size: 0.86rem;
-      color: var(--muted);
-      position: relative;
+      width: 92%;
+      max-width: 520px;
+      box-shadow: 0 18px 45px rgba(2,6,23,0.9);
+      color: var(--text);
     }
-
-    .price-card.highlight {
-      border-color: rgba(251, 191, 36, 0.9);
-      background: radial-gradient(circle at top left, rgba(251, 191, 36, 0.16), rgba(15, 23, 42, 0.98));
-    }
-
-    .price-plan {
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: rgba(249, 250, 251, 0.9);
-      margin-bottom: 0.4rem;
-    }
-
-    .price-amount {
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: #fefce8;
-      margin-bottom: 0.2rem;
-    }
-
-    .price-note {
-      font-size: 0.75rem;
-      color: rgba(148, 163, 184, 0.9);
-      margin-bottom: 0.6rem;
-    }
-
-    .price-list {
-      list-style: none;
-      display: grid;
-      gap: 0.3rem;
-      font-size: 0.82rem;
-    }
-
-    .price-list li::before {
-      content: "•";
-      margin-right: 0.3rem;
-      color: #facc15;
-    }
-
-    .price-tag {
-      position: absolute;
-      top: 0.7rem;
-      right: 0.8rem;
-      font-size: 0.7rem;
-      padding: 0.15rem 0.5rem;
-      border-radius: 999px;
-      border: 1px solid rgba(251, 191, 36, 0.9);
-      color: #fefce8;
-    }
-
-    .setup-fee {
-      margin-top: 1rem;
-      font-size: 0.82rem;
-      color: var(--muted);
-    }
+    .modal h3 { margin-bottom: 0.4rem; }
+    .modal p { color: var(--muted); margin-bottom: 0.8rem; }
+    .modal-actions { display:flex; gap:0.6rem; align-items:center; justify-content:flex-end; }
+    .modal-close { background: transparent; border: none; color: var(--muted); cursor: pointer; padding: 0.35rem 0.6rem; border-radius: 8px; }
+    .modal-cta { text-decoration:none; }
 
     /* FAQ */
     .faq-grid {
@@ -628,21 +582,9 @@
       justify-content: space-between;
     }
 
-    .cta-text-main {
-      font-size: 1rem;
-      font-weight: 500;
-    }
-
-    .cta-text-sub {
-      font-size: 0.86rem;
-      color: var(--muted);
-    }
-
-    .cta-actions {
-      display: flex;
-      gap: 0.7rem;
-      flex-wrap: wrap;
-    }
+    .cta-text-main { font-size: 1rem; font-weight: 500; }
+    .cta-text-sub { font-size: 0.86rem; color: var(--muted); }
+    .cta-actions { display: flex; gap: 0.7rem; flex-wrap: wrap; }
 
     /* Footer */
     footer {
@@ -652,13 +594,7 @@
       color: var(--muted);
     }
 
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 0.8rem;
-      flex-wrap: wrap;
-    }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 0.8rem; flex-wrap: wrap; }
 
     /* Utilities & Animations */
     .text-accent { color: #facc15; }
@@ -678,8 +614,7 @@
       }
 
       .agents-grid,
-      .why-grid,
-      .pricing-grid {
+      .why-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
@@ -706,31 +641,22 @@
 
       .nav-mobile.open { display: flex; }
 
-      .nav-mobile a {
-        font-size: 0.9rem;
-        color: var(--muted);
-        padding: 0.2rem 0;
-      }
-
+      .nav-mobile a { font-size: 0.9rem; color: var(--muted); padding: 0.2rem 0; }
       .nav-mobile a:hover { color: var(--text); }
-
       .nav-mobile .btn { margin-top: 0.6rem; }
 
       .hero-grid { gap: 1.8rem; }
 
       .agents-grid,
       .why-grid,
-      .pricing-grid,
       .who-grid {
         grid-template-columns: minmax(0, 1fr);
       }
 
       .container { padding: 0 1.2rem; }
 
-      .cta-block {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+      .cta-block { flex-direction: column; align-items: flex-start; }
+      .modal { width: 96%; }
     }
   </style>
 </head>
@@ -758,11 +684,12 @@
         </div>
 
         <div class="nav-cta">
-          <a href="#pricing" class="btn-outline btn">View Pricing</a>
+          <!-- replaced "View Pricing" link with modal trigger -->
+          <button id="getPricingBtn" class="btn-outline btn">Get Pricing</button>
           <a href="#cta" class="btn"><span class="pulse-dot"></span>Book a Demo</a>
         </div>
 
-        <button class="nav-toggle" aria-label="Toggle navigation">
+        <button class="nav-toggle" aria-label="Toggle navigation" id="navToggle">
           <span></span><span></span>
         </button>
       </nav>
@@ -802,7 +729,7 @@
                 <span class="pulse-dot"></span>
                 Book a Demo
               </a>
-              <a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%20want%20to%20know%20more%20about%20A.I.R.E%20Real%20Estate%20Automation" class="btn-outline btn" target="_blank">
+              <a href="https://wa.me/919910410030?text=Hi%2C%20I%20want%20to%20know%20more%20about%20A.I.R.E%20Real%20Estate%20Automation" class="btn-outline btn" target="_blank">
                 WhatsApp Us
               </a>
             </div>
@@ -998,13 +925,14 @@
               <li>Real estate marketing agencies & performance teams.</li>
             </ul>
           </div>
+
           <div class="who-card">
-            <strong>Where it shines:</strong>
+            <strong>Why teams love A.I.R.E</strong>
             <ul class="who-list">
-              <li>High-volume project launches and pre-launches.</li>
-              <li>Ongoing inventory sales with multiple projects.</li>
-              <li>NRI and investor-focused sales funnels.</li>
-              <li>Teams that want to systemize leads, not chase them.</li>
+              <li>Less manual follow-up, more qualified meetings.</li>
+              <li>Scales outreach without extra hiring.</li>
+              <li>Works with existing CRMs & WhatsApp numbers.</li>
+              <li>Built for Indian market nuances and global buyers.</li>
             </ul>
           </div>
         </div>
@@ -1017,113 +945,32 @@
         <div class="section-header">
           <div>
             <div class="section-kicker">Why A.I.R.E</div>
-            <h2 class="section-title">Why leading real estate teams choose A.I.R.E Automation.</h2>
+            <h2 class="section-title">Built to convert, not just converse.</h2>
           </div>
           <p class="section-subtitle">
-            It’s not just “AI for show”. It’s a full-stack, sales-focused system built around the realities of Indian real estate.
+            A suite of focused agents, reporting, and integrations that remove friction from the sales process.
           </p>
         </div>
 
         <div class="why-grid">
           <div class="why-card">
-            <h3 class="why-title">24/7 Sales Execution</h3>
-            <p>
-              Your AI bot answers instantly, shares details, books visits, and keeps clients engaged—even when your team is offline or in meetings.
-            </p>
+            <div class="why-title">Integration First</div>
+            <p>Connects to portals, CRMs, and WhatsApp without rebuilding your stack.</p>
           </div>
           <div class="why-card">
-            <h3 class="why-title">80% Sales Tasks Automated</h3>
-            <p>
-              You focus on serious buyers and closing. A.I.R.E handles early conversations, nurturing, data sharing, and reminders.
-            </p>
+            <div class="why-title">Conversion Focused</div>
+            <p>Built for pipeline velocity—bookings, follow-ups, and handoffs that drive closures.</p>
           </div>
           <div class="why-card">
-            <h3 class="why-title">Premium Communication</h3>
-            <p>
-              Modern, clear language tuned for NCR, Bangalore, Hyderabad buyers and NRI investors—even if your team is juggling multiple projects.
-            </p>
-          </div>
-          <div class="why-card">
-            <h3 class="why-title">All Property Types Supported</h3>
-            <p>
-              From residential towers to SCOs, plots, and commercial investments—A.I.R.E adapts to your inventory strategy.
-            </p>
-          </div>
-          <div class="why-card">
-            <h3 class="why-title">Modern Tech Stack</h3>
-            <p>
-              WhatsApp API + ChatGPT–grade intelligence + automation engine + CRM integrations, without technical headaches.
-            </p>
-          </div>
-          <div class="why-card">
-            <h3 class="why-title">Zero Technical Overload</h3>
-            <p>
-              We implement end-to-end. Your team receives a ready-to-use system with training, playbooks, and ongoing optimization options.
-            </p>
+            <div class="why-title">Local Market Smart</div>
+            <p>Language-aware outreach and city-specific playbooks for Indian cities and beyond.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PRICING -->
-    <section id="pricing">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <div class="section-kicker">Pricing</div>
-            <h2 class="section-title">Simple plans built around your pipeline size.</h2>
-          </div>
-          <p class="section-subtitle">
-            Start lean and scale as your deal flow and inventory grow. Every plan includes support and onboarding.
-          </p>
-        </div>
-
-        <div class="pricing-grid">
-          <article class="price-card">
-            <div class="price-plan">Starter Plan</div>
-            <div class="price-amount">₹9,999<span style="font-size:0.8rem; font-weight:400;">/month</span></div>
-            <div class="price-note">Ideal for solo brokers and small teams getting started with automation.</div>
-            <ul class="price-list">
-              <li>WhatsApp Sales Bot</li>
-              <li>Follow-Up Bot</li>
-              <li>Basic CRM tracking</li>
-              <li>Support for 1 city</li>
-            </ul>
-          </article>
-
-          <article class="price-card highlight">
-            <div class="price-tag">Most Popular</div>
-            <div class="price-plan">Growth Plan</div>
-            <div class="price-amount">₹19,999<span style="font-size:0.8rem; font-weight:400;">/month</span></div>
-            <div class="price-note">For teams scaling across NCR, Bangalore, and Hyderabad.</div>
-            <ul class="price-list">
-              <li>Everything in Starter</li>
-              <li>AI Lead Generator</li>
-              <li>Review & Referral Bot</li>
-              <li>Analytics dashboard & monthly reports</li>
-              <li>Support for up to 3 cities</li>
-            </ul>
-          </article>
-
-          <article class="price-card">
-            <div class="price-plan">Premium / Enterprise</div>
-            <div class="price-amount">₹29,999–₹49,999<span style="font-size:0.8rem; font-weight:400;">/month</span></div>
-            <div class="price-note">Full-stack automation for developers, large channel networks, and agencies.</div>
-            <ul class="price-list">
-              <li>Full automation system</li>
-              <li>Custom bots & workflows</li>
-              <li>API integrations & custom CRM flows</li>
-              <li>Dedicated support & optimization</li>
-              <li>Unlimited projects & enterprise features</li>
-            </ul>
-          </article>
-        </div>
-
-        <p class="setup-fee">
-          <strong>One-time setup fee:</strong> typically between <strong>₹10,000 – ₹25,000</strong>, depending on complexity and integrations.
-        </p>
-      </div>
-    </section>
+    <!-- PRICING REMOVED -->
+    <!-- The pricing section has been removed and replaced with a Get Pricing modal trigger in the header. -->
 
     <!-- FAQ -->
     <section id="faq">
@@ -1131,121 +978,132 @@
         <div class="section-header">
           <div>
             <div class="section-kicker">FAQ</div>
-            <h2 class="section-title">Questions real estate teams ask before going live.</h2>
+            <h2 class="section-title">Common questions about A.I.R.E</h2>
           </div>
           <p class="section-subtitle">
-            Straight answers, no jargon. If you have more questions, we’ll cover them on your demo call.
+            If you don't find an answer here, book a demo and we'll walk you through specifics for your business.
           </p>
         </div>
 
         <div class="faq-grid">
-          <div class="faq-list">
-            <div class="faq-item">
-              <div class="faq-q">Is this allowed on WhatsApp?</div>
-              <div class="faq-a">
-                Yes. We work with official WhatsApp Business API partners and follow WhatsApp’s guidelines for messaging,
-                templates, and opt-ins.
+          <div>
+            <div class="faq-list">
+              <div class="faq-item">
+                <div class="faq-q">How does A.I.R.E connect to my WhatsApp number?</div>
+                <div class="faq-a">We integrate with WhatsApp Business APIs or use approved gateway partners to run sales automations while keeping your number intact.</div>
               </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-q">Do I need technical knowledge to use A.I.R.E?</div>
-              <div class="faq-a">
-                No. The system is plug-and-play. Our team configures the flows, integrates tools, and provides simple SOPs
-                for your sales team to follow.
+
+              <div class="faq-item">
+                <div class="faq-q">Will A.I.R.E work with my CRM?</div>
+                <div class="faq-a">Yes — we support common CRMs and can integrate via webhook, CSV sync, or API depending on your setup.</div>
               </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-q">How fast can we go live?</div>
-              <div class="faq-a">
-                In most cases, <strong>1–3 days</strong> depending on your selected features, WhatsApp approval, and any
-                custom integrations required.
+
+              <div class="faq-item">
+                <div class="faq-q">Do you set up campaigns and follow-ups?</div>
+                <div class="faq-a">Yes. Our onboarding includes campaign setup, templating, and the initial follow-up sequences tailored to your projects.</div>
               </div>
             </div>
           </div>
 
-          <div class="faq-list">
+          <aside class="about-card">
             <div class="faq-item">
-              <div class="faq-q">Which cities do you support?</div>
-              <div class="faq-a">
-                We currently focus on <strong>Delhi NCR, Bangalore, and Hyderabad</strong> with the ability to support
-                Pan-India projects and NRI lead funnels.
-              </div>
+              <div class="faq-q">Can I trial A.I.R.E before committing?</div>
+              <div class="faq-a">We offer demos and pilot programs — book a demo to discuss a pilot customized to your portfolio and goals.</div>
             </div>
-            <div class="faq-item">
-              <div class="faq-q">What kind of ROI can we expect?</div>
-              <div class="faq-a">
-                While numbers vary, teams typically report <strong>3–10x better conversions</strong> thanks to instant
-                replies, structured follow-ups, and better-qualified meetings.
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-q">Can this work with our existing CRM or portal setup?</div>
-              <div class="faq-a">
-                Yes. In Premium plans, we integrate with your existing CRM and portals wherever possible, so you don’t
-                have to change your current tech stack—only upgrade it.
-              </div>
-            </div>
-          </div>
+          </aside>
         </div>
       </div>
     </section>
 
-    <!-- CTA -->
+    <!-- CTA Contact -->
     <section id="cta">
       <div class="container">
         <div class="cta-block">
           <div>
-            <div class="cta-text-main">
-              Ready to automate your real estate business with A.I.R.E?
-            </div>
-            <div class="cta-text-sub">
-              Share your city, inventory type, and current monthly lead volume—we’ll show you exactly how A.I.R.E can plug into your sales process.
-            </div>
+            <div class="cta-text-main">Ready to automate your real estate sales?</div>
+            <div class="cta-text-sub">Book a demo and we'll show how A.I.R.E fits your team and projects.</div>
           </div>
           <div class="cta-actions">
-            <a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%20want%20a%20demo%20of%20A.I.R.E%20Automation%20for%20my%20real%20estate%20business" target="_blank" class="btn">
-              <span class="pulse-dot"></span>
-              WhatsApp for Demo
-            </a>
-            <a href="mailto:business@kasanaglobal.com?subject=A.I.R.E%20Automation%20Demo&body=Hi%2C%0D%0A%0D%0AI%20would%20like%20to%20book%20a%20demo%20for%20A.I.R.E%20Automation.%0D%0A%0D%0ACity%3A%0D%0ACompany%3A%0D%0ALead%20volume%20per%20month%3A%0D%0A%0D%0ARegards%2C" class="btn-outline btn">
-              Email Our AI Team
-            </a>
+            <a href="https://wa.me/919910410030?text=Hi%2C%20I%20want%20to%20book%20a%20demo%20for%20A.I.R.E" class="btn" target="_blank"><span class="pulse-dot"></span>WhatsApp Us</a>
+            <a href="#contact" class="btn-outline btn">Contact</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- Get Pricing Modal -->
+  <div id="pricingModalBackdrop" class="modal-backdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="pricingModalTitle">
+      <h3 id="pricingModalTitle">Get Pricing</h3>
+      <p>Tell us a bit about your portfolio and we'll share a tailored pricing plan. Quickest way is to message us on WhatsApp — we'll respond within working hours.</p>
+      <div style="display:flex;gap:0.6rem;flex-wrap:wrap;">
+        <a id="modalWhatsappBtn" class="btn modal-cta" href="https://wa.me/919910410030?text=Hi%2C%20I%20want%20pricing%20for%20A.I.R.E" target="_blank" rel="noopener">Message on WhatsApp</a>
+        <button id="modalCloseBtn" class="modal-close">Close</button>
+      </div>
+    </div>
+  </div>
+
   <!-- Footer -->
   <footer>
     <div class="container">
       <div class="footer-inner">
-        <div>© <span id="year"></span> Kasana Global Ventures · A.I.R.E Automation.</div>
-        <div>Real Estate · AI · Automation</div>
+        <div>© Kasana Global Ventures</div>
+        <div>Technology • AI • Automation</div>
       </div>
     </div>
   </footer>
 </div>
 
 <script>
-  // Mobile nav toggle
-  const navToggle = document.querySelector(".nav-toggle");
-  const navMobile = document.getElementById("navMobile");
+  // WhatsApp number in international format (no +)
+  const WHATSAPP_NUMBER = "919910410030";
 
-  if (navToggle && navMobile) {
-    navToggle.addEventListener("click", () => {
-      navMobile.classList.toggle("open");
+  function waLink(number, text) {
+    const encoded = encodeURIComponent(text || "");
+    return `https://wa.me/${number}${text ? `?text=${encoded}` : ""}`;
+  }
+
+  // Update modal WhatsApp link dynamically
+  const modalWhatsappBtn = document.getElementById('modalWhatsappBtn');
+  if (modalWhatsappBtn) {
+    modalWhatsappBtn.href = waLink(WHATSAPP_NUMBER, "Hi, I want pricing for A.I.R.E");
+  }
+
+  // Header "Get Pricing" button open modal
+  const getPricingBtn = document.getElementById('getPricingBtn');
+  const modalBackdrop = document.getElementById('pricingModalBackdrop');
+  const modalCloseBtn = document.getElementById('modalCloseBtn');
+
+  if (getPricingBtn && modalBackdrop) {
+    getPricingBtn.addEventListener('click', function () {
+      modalBackdrop.classList.add('open');
+      modalBackdrop.setAttribute('aria-hidden', 'false');
     });
-
-    navMobile.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        navMobile.classList.remove("open");
-      });
+  }
+  if (modalCloseBtn && modalBackdrop) {
+    modalCloseBtn.addEventListener('click', function () {
+      modalBackdrop.classList.remove('open');
+      modalBackdrop.setAttribute('aria-hidden', 'true');
+    });
+  }
+  if (modalBackdrop) {
+    modalBackdrop.addEventListener('click', function (e) {
+      if (e.target === modalBackdrop) {
+        modalBackdrop.classList.remove('open');
+        modalBackdrop.setAttribute('aria-hidden', 'true');
+      }
     });
   }
 
-  // Dynamic year in footer
-  document.getElementById("year").textContent = new Date().getFullYear();
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navMobile = document.getElementById('navMobile');
+  if (navToggle && navMobile) {
+    navToggle.addEventListener('click', function () {
+      navMobile.classList.toggle('open');
+    });
+  }
 </script>
 </body>
 </html>
